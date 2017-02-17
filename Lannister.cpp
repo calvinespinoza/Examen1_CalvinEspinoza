@@ -53,7 +53,7 @@ string Lannister::getJefe()
 }
 
 
-string Stark::getAnimalEmblema()
+string Lannister::getAnimalEmblema()
 {
 	return animalEmblema;
 }
