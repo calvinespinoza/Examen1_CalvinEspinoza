@@ -1,4 +1,7 @@
-#include "GuardiaReal.h";
+#include "GuardiaReal.h"
+#include <iostream>
+
+using namespace std;
 
 GuardiaReal::GuardiaReal()
 {
@@ -66,9 +69,4 @@ int GuardiaReal::getAtaque()
 int GuardiaReal::getDefensa()
 {
 	return defensa;
-}
-
-GuardiaReal::GuardiaReal()
-{
-	cout << "Objeto Guardia Real creado" << endl;
 }

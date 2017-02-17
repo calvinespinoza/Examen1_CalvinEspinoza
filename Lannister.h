@@ -1,7 +1,11 @@
 #include <string>
+#include <vector>
+#include "GuardiaReal.h"
 
-#ifndef LANNISTER_H;
-#define LANNISTER_H;
+#ifndef LANNISTER_H
+#define LANNISTER_H
+
+using namespace std;
 
 class Lannister
 {
@@ -16,13 +20,13 @@ class Lannister
 		
 	public:
 		Lannister();
-		~Lannister();
+		//~Lannister();
 		
 		//Setters
 		void setJefe(string);
 		void setAnimalEmblema(string);
 		void setLema(string);
-		void setGuardiasReales(GuardiaReal*);
+		void setGuardiaReal(GuardiaReal*);
 		void setCantDinero(int);
 		void setFuerzaMontana(int);
 		void setCantIntegrantes(int);
@@ -31,10 +35,12 @@ class Lannister
 		string getJefe();
 		string getAnimalEmblema();
 		string getLema();
-		GuardiaReal* getGuardiasReales(int);
+		GuardiaReal* getGuardiaReal(int);
 		int getCantDinero();
 		int getFuerzaMontana();
 		int getCantIntegrantes();
 		
 		
 };
+
+#endif

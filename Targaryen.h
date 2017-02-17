@@ -1,7 +1,12 @@
 #include <string>
+#include <vector>
+#include "Dothraki.h"
 
-#ifndef TARGARYEN_H;
-#define TARGARYEN_H;
+
+#ifndef TARGARYEN_H
+#define TARGARYEN_H
+
+using namespace std;
 
 class Targaryen
 {
@@ -9,13 +14,13 @@ class Targaryen
 		string reina;
 		string animalEmblema;
 		string lema;
-		vector <Dothraki*> Dothraki;
+		vector <Dothraki*> dothraki;
 		int cantDragones;
 		int cantBarcos;
 		
 	public:
 		Targaryen();
-		~Targaryen();
+		//~Targaryen();
 		
 		//Setters
 		void setReina(string);
@@ -35,3 +40,5 @@ class Targaryen
 		
 		
 };
+
+#endif

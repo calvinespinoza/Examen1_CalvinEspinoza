@@ -1,11 +1,14 @@
-#include "Targaryen.h";
+#include "Targaryen.h"
+#include <iostream>
+
+using namespace std;
 
 Targaryen::Targaryen()
 {
 	reina = "";
 	animalEmblema = "";
 	lema = "";
-	vector <Dothraki*> Dothraki;
+	vector <Dothraki*> dothraki;
 	cantDragones = 0;
 	cantBarcos = 0;
 	
@@ -28,7 +31,7 @@ void Targaryen::setLema(string motto)
 
 void Targaryen::setDothraki(Dothraki* dothraki1)
 {
-	this -> Dothraki.push_back(dothraki1);
+	this -> dothraki.push_back(dothraki1);
 }
 
 void Targaryen::setCantDragones(int dragons)
@@ -59,7 +62,7 @@ string Targaryen::getLema()
 
 Dothraki* Targaryen::getDothraki(int num)
 {
-	return this -> Dothraki[num];
+	return this -> dothraki[num];
 }
 
 int Targaryen::getCantDragones()
@@ -70,20 +73,15 @@ int Targaryen::getCantDragones()
 
 int Targaryen::getCantBarcos()
 {
-	return cantBArcos;
+	return cantBarcos;
 }
-
-Targaryen::Targaryen()
-{
-	cout << "Objeto Targaryen creado" << endl;
-}
-
+/*
 Targaryen::~Targaryen()
 {
 	cout << "Liberando Memoria de Targaryen" << endl;
-	for (int i = 0; i < this -> Dothraki.size(); i++)
+	for (int i = 0; i < this -> dothraki.size(); i++)
 	{
-		delete this -> Dothraki[i];
+		delete this -> dothraki[i];
 	}
-	this -> Dothraki.clear();
-}
+	this -> dothraki.clear();
+}*/

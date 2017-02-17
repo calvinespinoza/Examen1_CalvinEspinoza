@@ -1,4 +1,7 @@
-#include "Dothraki.h";
+#include "Dothraki.h"
+#include <iostream>
+
+using namespace std;
 
 Dothraki::Dothraki()
 {
@@ -75,7 +78,3 @@ int Dothraki::getDefensa()
 	return defensa;
 }
 
-Dothraki::Dothraki()
-{
-	cout << "Objeto Dothraki creado" << endl;
-}

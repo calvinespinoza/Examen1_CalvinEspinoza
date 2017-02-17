@@ -3,6 +3,8 @@
 #ifndef FAMILIASNOBLES_H
 #define FAMILIASNOBLES_H
 
+using namespace std;
+
 class FamiliasNobles
 {
 	private:
@@ -35,3 +37,5 @@ class FamiliasNobles
 		
 		
 };
+
+#endif

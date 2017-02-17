@@ -1,4 +1,7 @@
-#include "Lannister.h";
+#include "Lannister.h"
+#include <iostream>
+
+using namespace std;
 
 Lannister::Lannister()
 {
@@ -65,7 +68,7 @@ string Lannister::getLema()
 
 GuardiaReal* Lannister::getGuardiaReal(int num)
 {
-	return this -> familiasNobles[num];
+	return this -> guardiasReales[num];
 }
 
 int Lannister::getCantDinero()
@@ -82,12 +85,7 @@ int Lannister::getCantIntegrantes()
 {
 	return cantIntegrantes;
 }
-
-Lannister::Lannister()
-{
-	cout << "Objeto Lannister creado" << endl;
-}
-
+/*
 Lannister::~Lannister()
 {
 	cout << "Liberando Memoria de Lannister" << endl;
@@ -96,5 +94,5 @@ Lannister::~Lannister()
 		delete this -> guardiasReales[i];
 	}
 	this -> guardiasReales.clear();
-}
+}*/
 	

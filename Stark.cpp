@@ -1,4 +1,7 @@
-#include "Stark.h";
+#include "Stark.h"
+#include <iostream>
+
+using namespace std;
 
 Stark::Stark()
 {
@@ -81,12 +84,7 @@ int Stark::getCantIntegrantes()
 {
 	return cantIntegrantes;
 }
-
-Stark::Stark()
-{
-	cout << "Objeto Stark creado" << endl;
-}
-
+/*
 Stark::~Stark()
 {
 	cout << "Liberando Memoria de Stark" << endl;
@@ -96,4 +94,5 @@ Stark::~Stark()
 	}
 	this -> familiasNobles.clear();
 }
+*/
 	

@@ -1,8 +1,11 @@
 #include <string>
 #include <vector>
+#include "FamiliasNobles.h"
 
-#ifndef STARK_H;
-#define STARK_H;
+#ifndef STARK_H
+#define STARK_H
+
+using namespace std;
 
 class Stark
 {
@@ -11,20 +14,20 @@ class Stark
 		int cantLobos;
 		string animalEmblema;
 		string lema;
-		vector <FamiliaNoble*> familiasNobles;
+		vector <FamiliasNobles*> familiasNobles;
 		string guerrero;
 		int cantIntegrantes;
 		
 	public:
 		Stark();
-		~Stark();
+		//~Stark();
 		
 		//Setters
 		void setJefe(string);
 		void setCantLobos(int);
 		void setAnimalEmblema(string);
 		void setLema(string);
-		void setFamiliasNobles(FamiliaNoble*);
+		void setFamiliasNobles(FamiliasNobles*);
 		void setGuerrero(string);
 		void setCantIntegrantes(int);
 		
@@ -33,10 +36,12 @@ class Stark
 		int getCantLobos();
 		string getAnimalEmblema();
 		string getLema();
-		FamiliaNoble* getFamiliasNobles(int);
+		FamiliasNobles* getFamiliasNobles(int);
 		string getGuerrero();
 		int getCantIntegrantes();
 		
 		
 };
+
+#endif
 

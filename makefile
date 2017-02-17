@@ -1,8 +1,8 @@
 Examen1:	Main.o Stark.o Lannister.o Targaryen.o FamiliasNobles.o Dothraki.o GuardiaReal.o
-		g++ Stark.o Lannister.o Targaryen.o FamiliasNobles.o Dothraki.o GuardiaReal.o -o Examen1
+		g++ Main.o Stark.o Lannister.o Targaryen.o FamiliasNobles.o Dothraki.o GuardiaReal.o -o Examen1
 
-Main.o:		Stark.cpp Stark.h Lannister.cpp Lannister.h Targaryen.cpp Targaryen.h FamiliasNobles.cpp FamiliasNobles.h Dothraki.cpp Dothraki.h GuardiaReal.cpp GuardiaReal.h
-		g++ -c Stark.cpp Lannister.cpp Targaryen.cpp FamiliasNobles.cpp Dothraki.cpp GuardiaReal.cpp
+Main.o:		Stark.h Lannister.h Targaryen.h FamiliasNobles.h  Dothraki.h GuardiaReal.h Main.cpp
+		g++ -c Main.cpp
 
 Stark.o:	Stark.cpp Stark.h FamiliasNobles.h
 		g++ -c Stark.cpp
@@ -23,8 +23,4 @@ Targaryen.o:	Targaryen.cpp Targaryen.h Dothraki.h
 Dothraki.o:		Dothraki.cpp Dothraki.h
 			g++ -c Dothraki.cpp
 
-clean:		rm ".o Main
-
-
-
-
+clean:		rm ".o Examen1

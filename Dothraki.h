@@ -1,7 +1,9 @@
 #include <string>
 
-#ifndef DOTHRAKI_H;
-#define DOTHRAKI_H;
+#ifndef DOTHRAKI_H
+#define DOTHRAKI_H
+
+using namespace std;
 
 class Dothraki
 {
@@ -35,3 +37,5 @@ class Dothraki
 		
 		
 };
+
+#endif

@@ -3,6 +3,8 @@
 #ifndef GUARDIAREAL_H
 #define GUARDIAREAL_H
 
+using namespace std;
+
 class GuardiaReal
 {
 	private:
@@ -32,3 +34,5 @@ class GuardiaReal
 		
 		
 };
+
+#endif

@@ -1,4 +1,7 @@
-#include "FamiliasNobles.h";
+#include "FamiliasNobles.h"
+#include <iostream>
+
+using namespace std;
 
 FamiliasNobles::FamiliasNobles()
 {
@@ -75,7 +78,3 @@ int FamiliasNobles::getDefensa()
 	return defensa;
 }
 
-FamiliasNobles::FamiliasNobles()
-{
-	cout << "Objeto Pequeñas Familias Nobles creado" << endl;
-}
