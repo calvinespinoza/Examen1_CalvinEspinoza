@@ -19,7 +19,7 @@ class GuardiaReal
 		//Setters
 		void setNombre(string);
 		void setEdad(int);
-		void setTipoSoldado(string);
+		void setTipoSoldado(int);
 		void setAtaque(int);
 		void setDefensa(int);
 		
