@@ -1,9 +1,9 @@
 #include <string>
 
-#ifndef FAMILIANOBLE_H;
-#define FAMILIANOBLE_H;
+#ifndef FAMILIASNOBLES_H;
+#define FAMILIASNOBLES_H;
 
-class FamiliaNoble
+class FamiliasNobles
 {
 	private:
 		string nombre;
@@ -14,8 +14,8 @@ class FamiliaNoble
 		int defensa;
 		
 	public:
-		FamiliaNoble();
-		~FamiliaNoble();
+		FamiliasNobles();
+		~FamiliasNobles();
 		
 		//Setters
 		void setNombre(string);
