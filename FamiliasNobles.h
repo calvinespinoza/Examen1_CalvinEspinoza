@@ -1,7 +1,7 @@
 #include <string>
 
-#ifndef FAMILIASNOBLES_H;
-#define FAMILIASNOBLES_H;
+#ifndef FAMILIASNOBLES_H
+#define FAMILIASNOBLES_H
 
 class FamiliasNobles
 {

@@ -1,7 +1,7 @@
 #include <string>
 
-#ifndef GUARDIAREAL_H;
-#define GUARDIAREAL_H;
+#ifndef GUARDIAREAL_H
+#define GUARDIAREAL_H
 
 class GuardiaReal
 {
