@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <vector>
 #include "Stark.h"
 #include "Lannister.h"
 #include "Targaryen.h"
@@ -6,32 +8,35 @@
 #include "GuardiaReal.h"
 #include "Dothraki.h"
 
+using namespace std;
 int main()
 {
 	int opcion;
-	int familia = 0, ejercito = 0;
+	int familia = 0, ejercito = 0, listar = 0;
 	char resp = 'y';
+	int cantFamilias = 0, cantDothraki = 0, cantGuardias = 0;
 	
 	Stark stark;
 	Lannister lannister;
 	Targaryen targaryen;
-	return 0;
-
-	while (resp == 'y' || resp = 'Y'){
+	
+	
+	vector <Dothraki*> v_dothraki;
+	vector <GuardiaReal*> v_guardiasReales;
+	vector <FamiliasNobles*> v_familiasNobles;
+	
+	while (resp == 'y' || resp == 'Y'){
 		cout << "\nMENU\n1. Agregar Familia\n2. Agregar Ejercito \n3. Listar\n";
-		cout << "4. Eliminar\n5. Simulación\n6. Salir";
+		cout << "4. Eliminar\n5. Simulación\n6. Salir\n\n";
 		cin >> opcion;
 		cout << endl;
 		
-		switch (opcion) {
-		
-			case 1: 
+		if (opcion == 1) {
 				cout << "ELEGIR FAMILIA\n1. Stark\n2. Lannister\n";
 				cout << "3. Targaryen\n";
 				cin >> familia;
 				
-				switch (familia) {
-					case 1:
+				if(familia == 1) {
 						string boss, emblem, motto, warrior;
 						int lobos, integrantes;
 						
@@ -59,9 +64,9 @@ int main()
 						stark.setLema(motto);
 						stark.setGuerrero(warrior);
 						stark.setCantIntegrantes(integrantes);
-						break;
+					}
 					
-					case 2:
+					if (familia == 2) {
 						string boss1, emblem1, motto1;
 						int dinero, fuerza, integrantes1;
 						
@@ -85,14 +90,14 @@ int main()
 						
 						lannister.setJefe(boss1);
 						lannister.setAnimalEmblema(emblem1);
-						lannister.setLema(motto);
+						lannister.setLema(motto1);
 						lannister.setCantDinero(dinero);
 						lannister.setFuerzaMontana(fuerza);
 						lannister.setCantIntegrantes(integrantes1);
 						
-						break;
-						
-					case 3:
+					}
+					
+					if (familia == 3) {
 						string queen, emblem2, motto2;
 						int dragons, boats;
 						
@@ -118,23 +123,16 @@ int main()
 						targaryen.setLema(motto2);
 						targaryen.setCantDragones(dragons);
 						targaryen.setCantBarcos(boats);
-						break;
-						
-					default:
-						cout << "No valido";
-						break;
-						
+					}
 				}
 				
-				case 2:
+				if (opcion == 2) {
 						cout << "ELEGIR EJERCITO\n1. Familias Nobles (Stark)\n";
 						cout << "2. Guardia Real (Lannister)\n";
 						cout << "3. Dothraki (Targaryen)\n";
 						cin >> ejercito;
 						
-						switch (ejercito){
-						
-							case 1:
+						if (ejercito == 1) {
 									string name, escudo, lema;
 									int personas, ataque1, defensa1;
 									
@@ -158,18 +156,19 @@ int main()
 									cin >> defensa1;
 									
 									FamiliasNobles* familias = new FamiliasNobles();
+									cantFamilias++;
 									
-									familias.setNombre(name);
-									familias.setSimboloEscudo(escudo);
-									familias.setLema(lema);
-									familias.setCantPersonas(personas);
-									familias.setAtaque(ataque1);
-									familias.setDefensa(defensa1);
+									familias -> setNombre(name);
+									familias -> setSimboloEscudo(escudo);
+									familias -> setLema(lema);
+									familias -> setCantPersonas(personas);
+									familias -> setAtaque(ataque1);
+									familias -> setDefensa(defensa1);
 									
 									stark.setFamiliasNobles(familias);
-									break;
+							}
 							
-							case 2:
+							if (ejercito == 2) {
 									string name1;
 									int edad, soldado, ataque2, defensa2;
 									
@@ -182,7 +181,6 @@ int main()
 						
 									cout << endl << "Soldado\n1. Caballero\n2. Jinete\n3. Arquero:" << endl;
 									cin >> soldado;
-				
 
 									cout << endl << "Ataque:" << endl;
 									cin >> ataque2;
@@ -191,20 +189,108 @@ int main()
 									cin >> defensa2;
 									
 									GuardiaReal* real = new GuardiaReal();
+									cantGuardias++;
 									
-									familias.setNombre(name);
-									familias.setSimboloEscudo(escudo);
-									familias.setLema(lema);
-									familias.setCantPersonas(personas);
-									familias.setAtaque(ataque1);
-									familias.setDefensa(defensa1);
+									real -> setNombre(name1);
+									real -> setEdad(edad);
+									real -> setTipoSoldado(soldado);
+									real -> setAtaque(ataque2);
+									real -> setDefensa(defensa2);
+		
 									
-									stark.setFamiliasNobles(familias);
-									break;
+									lannister.setGuardiaReal(real);
+							}
 									
-								
+							if (ejercito == 3) {
+									string name2, barbaro, nombreCab, color;
+									int ataque3, defensa3;
+									
+									cout << endl << "Nombre:" << endl;
+									cin >> name2;
+						
+									cout << endl << "Jefe Barbaro" << endl;
+									cin >> barbaro;
+									
+									cout << endl << "Nombre de Caballo" << endl;
+									cin >> nombreCab;
+									
+									cout << endl << "Color de Caballo:" << endl;
+									cin >> color;
+
+									cout << endl << "Ataque:" << endl;
+									cin >> ataque3;
+									
+									cout << endl << "Defensa:" << endl;
+									cin >> defensa3;
+									
+									Dothraki* dothraki = new Dothraki();
+									cantDothraki++;
+									
+									dothraki -> setNombre(name2);
+									dothraki -> setJefeBarbaro(barbaro);
+									dothraki -> setNombreCaballo(nombreCab);
+									dothraki -> setColorCaballo(color);
+									dothraki -> setAtaque(ataque3);
+									dothraki -> setDefensa(defensa3);
+									
+									
+									targaryen.setDothraki(dothraki);
+								}
+							
+						}
+	
+					if (opcion == 3) {
+						cout << "ELEGIR FAMILIA\n1. Stark\n2. Lannister\n";
+						cout << "3. Targaryen\n";
+						cin >> listar;
+						
+						if (listar == 1) {
+								cout << endl << "Jefe: " << stark.getJefe();
+								cout << endl << "Lobos: "  << stark.getCantLobos();
+								cout << endl << "Emblema: " << stark.getAnimalEmblema();
+								cout << endl << "Lema: " << stark.getLema();
+								cout << endl << "Familias: ";
+								for (int i = 0; i < cantFamilias; i++)
+									cout << endl << stark.getFamiliasNobles(i) -> getNombre();
+									
+								cout << endl  << "Guerrero: " << stark.getGuerrero();
+								cout << endl  << "Integrantes: " << stark.getCantIntegrantes();
+						}
+							
+						if (listar == 2) {
+								cout << endl << "Jefe: " << lannister.getJefe();
+								cout << endl << "Emblema: " << lannister.getAnimalEmblema();
+								cout << endl << "Lema: " << lannister.getLema();
+								cout << endl << "Guardias Reales: ";
+								for (int i = 0; i < cantGuardias; i++)
+									cout << endl << lannister.getGuardiaReal(i) -> getNombre();
+								cout << endl << "Dinero: " << lannister.getCantDinero();
+								cout << endl  << "Fuerza de Montaña: " << lannister.getFuerzaMontana();
+								cout << endl  << "Integrantes: " << lannister.getCantIntegrantes();
+						}
+							
+						if (listar == 3) {
+								cout << endl << "Reina: " << targaryen.getReina();
+								cout << endl << "Emblema: " << targaryen.getAnimalEmblema();
+								cout << endl << "Lema: " << targaryen.getLema();
+								cout << endl << "Dothraki: ";
+								for (int i = 0; i < cantDothraki; i++)
+									cout << endl << targaryen.getDothraki(i) -> getNombre();
+								cout << endl  << "Dragones: " << targaryen.getCantDragones();
+								cout << endl  << "Barcos: " << targaryen.getCantBarcos();
+							}
+						}
+						
+					if (opcion == 4) {
+					}
+					
+					if(opcion == 6) {
+						return 0;
+					}
 						
 						
 						
 		}
+		
 }
+
