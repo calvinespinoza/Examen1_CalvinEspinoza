@@ -12,7 +12,7 @@ using namespace std;
 int main()
 {
 	int opcion;
-	int familia = 0, ejercito = 0, listar = 0;
+	int familia = 0, ejercito = 0, listar = 0, eliminar = 0, eliminar2 = 0, simulacion1 = 0, simulacion2 = 0;
 	char resp = 'y';
 	int cantFamilias = 0, cantDothraki = 0, cantGuardias = 0;
 	
@@ -282,15 +282,148 @@ int main()
 						}
 						
 					if (opcion == 4) {
+							cout << "ELEGIR FAMILIA\n1. Stark\n";
+							cout << "2. Lannister\n";
+							cout << "3. Targaryen\n";
+							cin >> eliminar;
+							
+							cout << "ELEGIR EJERCITO PARA ELIMINAR";
+							if (eliminar == 1) {
+								for (int i = 0; i < cantFamilias; i++)
+									cout << endl << i + 1 << stark.getFamiliasNobles(i) -> getNombre();
+								cin >> eliminar2;
+								//stark.eliminarStark(eliminar2);
+							}
+							
+							if (eliminar == 2) {
+								for (int i = 0; i < cantGuardias; i++)
+									cout << endl << lannister.getGuardiaReal(i) -> getNombre();
+								cin >> eliminar2;
+								lannister.eliminarLannister(eliminar2);
+							}
+							
+							if (eliminar == 3) {
+								for (int i = 0; i < cantDothraki; i++)
+									cout << endl << targaryen.getDothraki(i) -> getNombre();
+								cin >> eliminar2;
+								targaryen.eliminarTargaryen(eliminar2);
+							}
+								
+					}
+					
+					if (opcion == 5) {
+							cout << "ELEGIR PRIMERA FAMILIA\n1. Stark\n2. Lannister\n";
+							cout << "3. Targaryen\n";
+							cin >> simulacion1;
+							
+							cout << "ELEGIR SEGUNA FAMILIA\n1. Stark\n2. Lannister\n";
+							cout << "3. Targaryen\n";
+							cin >> simulacion2;
+							
+							
+							
+							int attack1, attack2, defense1, defense2;
+							int sum1, sum2, sum3, sum4;
+							string first, second;
+							
+							if (simulacion1 == 1)
+							{
+								first = "Stark";
+								for (int i = 0; i < cantFamilias; i++)
+									sum1 += stark.getFamiliasNobles(i) -> getAtaque();
+								attack1 = sum1/cantFamilias;
+								
+								for (int i = 0; i < cantFamilias; i++)
+									sum2 += stark.getFamiliasNobles(i) -> getDefensa();
+								defense1 = sum2/cantFamilias;
+							}
+							
+							if (simulacion2 == 1)
+							{
+								second = "Stark";
+								for (int i = 0; i < cantFamilias; i++)
+									sum3 += stark.getFamiliasNobles(i) -> getAtaque();
+								attack2 = sum3/cantFamilias;
+								
+								for (int i = 0; i < cantFamilias; i++)
+									sum4 += stark.getFamiliasNobles(i) -> getDefensa();
+								defense2 = sum4/cantFamilias;
+							}
+							
+							if (simulacion1 == 2)
+							{
+								first = "Lannister";
+								for (int i = 0; i < cantGuardias; i++)
+									sum1 += lannister.getGuardiaReal(i) -> getAtaque();
+								attack1 = sum1/cantGuardias;
+								
+								for (int i = 0; i < cantGuardias; i++)
+									sum2 +=  lannister.getGuardiaReal(i)  -> getDefensa();
+								defense1 = sum2/cantGuardias;
+							}
+							
+							if (simulacion2 == 2)
+							{
+								second = "Lannister";
+								for (int i = 0; i < cantGuardias; i++)
+									sum3 += lannister.getGuardiaReal(i)  -> getAtaque();
+								attack2 = sum3/cantGuardias;
+								
+								for (int i = 0; i < cantGuardias; i++)
+									sum4 +=  lannister.getGuardiaReal(i) -> getDefensa();
+								defense2 = sum4/cantGuardias;
+							}
+							
+							if (simulacion1 == 3)
+							{
+								first = "Targaryen";
+								for (int i = 0; i < cantDothraki; i++)
+									sum1 += targaryen.getDothraki(i) -> getAtaque();
+								attack1 = sum1/cantDothraki;
+								
+								for (int i = 0; i < cantDothraki; i++)
+									sum2 +=  targaryen.getDothraki(i) -> getDefensa();
+								defense1 = sum2/cantDothraki;
+							}
+							
+							if (simulacion2 == 3)
+							{
+								second = "Targaryen";	
+								for (int i = 0; i < cantDothraki; i++)
+									sum3 += targaryen.getDothraki(i)  -> getAtaque();
+								attack2 = sum3/cantDothraki;
+								
+								for (int i = 0; i < cantDothraki; i++)
+									sum4 +=  targaryen.getDothraki(i) -> getDefensa();
+								defense2 = sum4/cantDothraki;
+							}
+							
+							do
+							{
+								defense2 -= attack1;
+								defense1 -= attack2;
+							
+								cout << "Defensa de " << first << defense1;
+								cout << "Defensa de " << second << defense2;
+							} while(defense1 > 0 && defense2 > 0);
+							
+							if (defense1 == 0) {
+								cout << first << " ha ganado";
+							}
+							
+							if (defense2 == 0) {
+								cout << second << " ha ganado";
+							}
+							
 					}
 					
 					if(opcion == 6) {
 						return 0;
 					}
 						
-						
-						
+					
 		}
 		
-}
+		}
+
 

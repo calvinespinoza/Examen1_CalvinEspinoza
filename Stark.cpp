@@ -85,6 +85,10 @@ int Stark::getCantIntegrantes()
 	return cantIntegrantes;
 }
 /*
+void Stark::eliminarStark(int i) {
+	familiasNobles.erase(familiasNobles.begin() + i);
+}
+/*
 Stark::~Stark()
 {
 	cout << "Liberando Memoria de Stark" << endl;

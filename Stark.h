@@ -21,7 +21,7 @@ class Stark
 	public:
 		Stark();
 		//~Stark();
-		
+		void eliminarStark(int);
 		//Setters
 		void setJefe(string);
 		void setCantLobos(int);

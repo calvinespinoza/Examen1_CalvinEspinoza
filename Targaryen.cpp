@@ -75,6 +75,10 @@ int Targaryen::getCantBarcos()
 {
 	return cantBarcos;
 }
+
+void Targaryen::eliminarTargaryen(int i) {
+	dothraki.erase(dothraki.begin() + i);
+}
 /*
 Targaryen::~Targaryen()
 {

@@ -21,7 +21,7 @@ class Targaryen
 	public:
 		Targaryen();
 		//~Targaryen();
-		
+		void eliminarTargaryen(int);
 		//Setters
 		void setReina(string);
 		void setAnimalEmblema(string);

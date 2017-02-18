@@ -85,6 +85,10 @@ int Lannister::getCantIntegrantes()
 {
 	return cantIntegrantes;
 }
+
+void Lannister::eliminarLannister(int i) {
+	guardiasReales.erase(guardiasReales.begin() + i);
+}
 /*
 Lannister::~Lannister()
 {

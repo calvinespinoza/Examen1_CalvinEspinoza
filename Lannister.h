@@ -21,7 +21,7 @@ class Lannister
 	public:
 		Lannister();
 		//~Lannister();
-		
+		void eliminarLannister(int);
 		//Setters
 		void setJefe(string);
 		void setAnimalEmblema(string);
